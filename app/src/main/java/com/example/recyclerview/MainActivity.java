@@ -92,6 +92,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.item_vertical:
+                mLayoutManager = new LinearLayoutManager(this);
+                mRecyclerView.setLayoutManager(mLayoutManager);
+                break;
             case R.id.item_grid:
                 mLayoutManager = new GridLayoutManager(this, 2);
                 mRecyclerView.setLayoutManager(mLayoutManager);
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.item_staggered_grid:
                 mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                break;
             case R.id.item_horizontal:
                 mLayoutManager = new LinearLayoutManager (MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
                 mRecyclerView.setLayoutManager(mLayoutManager);
